@@ -1,0 +1,33 @@
+<!--Página de formulário geral-->
+
+{% extends 'base.html' %}
+
+{% block body %}
+
+<h3>Excluir Registros</h3>
+
+<p class="lead">
+    Confirme para excluir o registro definitivamente.
+</p>
+
+<hr>
+
+<form action="" method="post">
+
+    <p>
+        Deseja excluir o registro: <strong>{{ object }} ?</strong>
+    </p>
+
+    {% csrf_token %}
+
+    {{ form.as_p }}
+    <hr>
+
+    <button type="submit" class="btn btn-danger">Excluir</button>
+    <button type="button" class="btn btn-warning">
+      <a href="{% url 'index' %}">Cancelar</a>
+    </button>
+
+</form>
+
+{% endblock %}

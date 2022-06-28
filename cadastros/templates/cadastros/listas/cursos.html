@@ -1,0 +1,35 @@
+<!--Página para listar todos os curso do banco de dados-->
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+<h3>Lista de cursos registrados</h3>
+
+<a href="{% url 'criar_curso' %}" class="btn btn-primary btn-sm">Adicionar Curso</a>
+
+<hr>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <tr>
+            <th>Nome</th>
+            <th>Nível</th>
+            <th>Campus</th>
+            <th> </th>
+        </tr>
+
+        {% for curso in listarcursos %}
+        <tr>
+            <td>{{ curso.nome }}</td>
+            <td>{{ curso.nivel }}</td>
+            <td>{{ curso.campus }}</td>
+            <td>
+                <a href="{% url 'editar_curso' curso.pk %}" class="btn btn-warning btn-sm"> Editar </a>
+                <a href="{% url 'excluir_curso' curso.pk %}" class="btn btn-danger btn-sm"> Excluir </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+<!--Página com lista de todos os alunos de determinada turma-->
+{% extends "base.html" %}
+
+{% block body %}
+
+<h2>Egressos IFB</h2>
+<br>
+<p>
+    Página com informações dos nossos egressos:
+</p>
+{% if egressos1 %} <!--Usado para informar se tem cursos cadastrados-->
+    {% for egresso in egressos1 %}
+
+        <div class="card">
+            <h5 class="card-header">{{egresso.nome_completo}}</h5>
+            <div class="card-body">
+                <h5 class="card-title">Cargo Atual: {{egresso.cargo_atual}}</h5>
+                <p class="card-text">Empresa Atual: {{egresso.empresa_atual}}</p>
+                <p class="card-text">Rede Social: {{egresso.rede_social}}</p>
+                <p class="card-text">Lattes: {{egresso.lattes}}</p>
+                <p class="card-text">Interesses: {{egresso.interesses}}</p>
+                <p class="card-text">Relato Pessoal: {{egresso.relato_pessoal}}</p>
+                <br>
+            </div>
+        </div>
+
+    {% endfor %}
+
+{% else %}
+    <p>Nunhum egresso cadastrado</p>
+{% endif %}
+
+{% endblock %}

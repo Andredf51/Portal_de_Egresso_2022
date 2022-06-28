@@ -1,0 +1,35 @@
+<!--Página para listar todos as turmas do banco de dados-->
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+<h3>Lista de turmas registrados</h3>
+
+<a href="{% url 'criar_turma' %}" class="btn btn-primary btn-sm">Adicionar Turma</a>
+
+<hr>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <tr>
+            <th>Período</th>
+            <th>Data da formatura</th>
+            <th>Curso</th>
+            <th> </th>
+        </tr>
+
+        {% for turma in listarturmas %}
+        <tr>
+            <td>{{ turma.periodo }}</td>
+            <td>{{ turma.data_formatura }}</td>
+            <td>{{ turma.curso }}</td>
+            <td>
+                <a href="{% url 'editar_turma' turma.pk %}" class="btn btn-warning btn-sm"> Editar </a>
+                <a href="{% url 'excluir_turma' turma.pk %}" class="btn btn-danger btn-sm"> Excluir </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+{% endblock %}

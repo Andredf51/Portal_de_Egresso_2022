@@ -1,0 +1,30 @@
+<!--Página de formulário geral-->
+
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% block body %}
+
+<h3>{{ titulo }}</h3>
+
+<p class="lead">
+    Preencher todos os campos obrigatórios.
+</p>
+
+<hr>
+
+<form action="" method="post">
+
+    {% csrf_token %}
+
+    {{ form|crispy }}
+
+    <hr class="mt-4">
+    <button type="submit" class="btn btn-primary">{{ botao }}</button>
+
+</form>
+
+{% endblock %}

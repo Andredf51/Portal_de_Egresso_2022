@@ -1,0 +1,53 @@
+<!--Página localizada na área do coordenador, utilizada para adicionar e deletar egressos-->
+{% extends "base.html" %}
+
+{% block body %}
+<H3>Gerenciar Egressos</H3>
+<div class="row">
+    <div class="col-lg-12">
+
+        <div class="card">
+            <div class="card-header">
+                Gerenciar Egressos
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Área dedicada ao regenciamento de egressos do IFB, pelo coordenador do curso.</h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <a href="{% url 'registraraluno' %}" class="btn btn-primary">Criar Egresso</a>
+            </div>
+        </div>
+        <br>
+
+    </div>
+</div>
+
+<div class="col-lg-12">
+    <h2>Lista de egressos do IFB</h2>
+    <br>
+
+{% for listaraluno in gerenciaralunos2%}
+
+<div class="card">
+    <h5 class="card-header">{{ listaraluno.nome_completo }}</h5>
+    <div class="card-body">
+      <h5 class="card-title">Curso: {{ listaraluno.curso }}</h5>
+      <h5 class="card-title">Empresa Atual: {{listaraluno.empresa_atual }}</h5>
+      <h5 class="card-title">Interesses: {{listaraluno.interesses}}</h5>
+      <h5 class="card-title">Turma: {{listaraluno.turma }}</h5>
+      <h5 class="card-title">Validado ?: {{listaraluno.validado }}</h5>
+      <h5 class="card-title">Validado ?: {{listaraluno.id }}</h5>
+        <a class="btn btn-warning" href="#">Editar</a>
+        <a class="btn btn-danger" href="#">Delete</a>
+
+    </div>
+</div>
+<br>
+{% endfor %}
+
+
+    <p> {{ gerenciaralunos2 }}</p>
+
+
+</div>
+
+{% endblock %}
