@@ -18,7 +18,7 @@
                 <h5 class="card-title">Curso: {{turma.curso}}</h5>
                 <p class="card-text">Data da formatura: {{turma.data_formatura}}</p>
                 <p class="card-text">Foto: {{turma.foto}}</p>
-                <p class="card-text">Foto: {{turma.curso.nivel}}</p>
+                <p class="card-text">Nível: {{turma.curso.nivel}}</p>
                 <a href="{% url 'egresso_select' turma.id %}" class="btn btn-success">Ver Egressos</a>
             </div>
         </div>

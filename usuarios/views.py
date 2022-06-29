@@ -42,7 +42,8 @@ class AlunoCreate(CreateView):
 class PerfilAlunoUpdate(UpdateView):
     template_name = 'cadastros/form.html'
     model = PerfilAluno
-    fields = ['nome_completo', 'curso', 'cargo_atual', 'turma']
+    fields = ['nome_completo', 'curso', 'turma', 'cargo_atual', 'foto', 'empresa_atual', 'trabalha_area', 'ifb_ajudou',
+              'grade_ifb', 'curso_extra', 'qual_curso_extra', 'opiniao_curso_ifb', 'pode_melhorar', 'rede_social', 'lattes']
     success_url = reverse_lazy('index')
 
     def get_object(self, queryset=None):

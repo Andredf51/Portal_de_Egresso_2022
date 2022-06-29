@@ -3,6 +3,7 @@
 
 {% block body %}
 <H3>Gerenciar Egressos</H3>
+
 <div class="row">
     <div class="col-lg-12">
 
@@ -31,11 +32,11 @@
     <h5 class="card-header">{{ listaraluno.nome_completo }}</h5>
     <div class="card-body">
       <h5 class="card-title">Curso: {{ listaraluno.curso }}</h5>
-      <h5 class="card-title">Empresa Atual: {{listaraluno.empresa_atual }}</h5>
-      <h5 class="card-title">Interesses: {{listaraluno.interesses}}</h5>
       <h5 class="card-title">Turma: {{listaraluno.turma }}</h5>
+      <h5 class="card-title">Qual o cargo atual: {{listaraluno.cargo_atual}}</h5>
+      <h5 class="card-title">O que achou do curso: {{listaraluno.opiniao_curso_ifb }}</h5>
+      <h5 class="card-title">Melhorias: {{listaraluno.pode_melhorar }}</h5>
       <h5 class="card-title">Validado ?: {{listaraluno.validado }}</h5>
-      <h5 class="card-title">Validado ?: {{listaraluno.id }}</h5>
         <a class="btn btn-warning" href="#">Editar</a>
         <a class="btn btn-danger" href="#">Delete</a>
 
@@ -45,7 +46,7 @@
 {% endfor %}
 
 
-    <p> {{ gerenciaralunos2 }}</p>
+<!--    <p> {{ gerenciaralunos2 }}</p>-->
 
 
 </div>
