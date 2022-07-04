@@ -1,6 +1,6 @@
 #Página para a criação de usuários
 
-from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.models import User, Group
 from .forms import AlunoForm, CoordenadorForm
 from django.urls import reverse_lazy
@@ -59,6 +59,13 @@ class PerfilAlunoUpdate(UpdateView):
         return context
 
 
+class DeleteAlunoView(DeleteView):
+    model = PerfilAluno
+    template_name = 'cadastros/form-excluir.html'
+    success_url = reverse_lazy('index')
+
+
+############################### Coordenador #################################
 class CoordenadorCreate(CreateView):
     template_name = 'cadastros/form.html'
     form_class = CoordenadorForm

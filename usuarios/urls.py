@@ -1,6 +1,6 @@
 from django.urls import path
 from django.contrib.auth import views as auth_views
-from .views import AlunoCreate, CoordenadorCreate, PerfilAlunoUpdate, PerfilCoordenadorUpdate
+from .views import AlunoCreate, CoordenadorCreate, PerfilAlunoUpdate, PerfilCoordenadorUpdate, DeleteAlunoView
 
 urlpatterns = [
     path('login/', auth_views.LoginView.as_view(
@@ -11,4 +11,6 @@ urlpatterns = [
     path('registrarcoordenador/', CoordenadorCreate.as_view(), name='registrarcoordenador'),
     path('atualizar_dados_aluno/', PerfilAlunoUpdate.as_view(), name='atualizar_dados_aluno'),
     path('atualizar_dados_coordenador/', PerfilCoordenadorUpdate.as_view(), name='atualizar_dados_coordenador'),
+
+    path('excluir/egresso/<int:pk>/', DeleteAlunoView.as_view(), name='excluir_egresso'),
 ]
