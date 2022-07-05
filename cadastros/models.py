@@ -31,7 +31,7 @@ class Turma(models.Model):
     curso = models.ForeignKey(Curso, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.periodo
+        return f'{self.periodo} - {self.curso}'
 
 #Esquema do banco de dados
 # 1 - 1 - OneToOneField

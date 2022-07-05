@@ -2,6 +2,7 @@
 {% extends "base.html" %}
 
 {% block body %}
+<br><br>
 <H3>Área do coordenador</H3>
 
 <div class="row">
@@ -13,7 +14,6 @@
             </div>
             <div class="card-body">
               <h5 class="card-title">Área dedicada ao gerenciamento dos cursos do IFB.</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
               <a href="{% url 'listar_cursos' %}" class="btn btn-primary">Gerenciar Cursos</a>
             </div>
         </div>
@@ -25,7 +25,6 @@
             </div>
             <div class="card-body">
               <h5 class="card-title">Área dedicada ao gerenciamento das turmas do IFB.</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
               <a href="{% url 'listar_turma' %}" class="btn btn-primary">Gerenciar Turmas</a>
             </div>
         </div>
@@ -37,10 +36,10 @@
             </div>
             <div class="card-body">
               <h5 class="card-title">Área dedicada ao gerenciamento dos egressos do IFB.</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
               <a href="{% url 'gerenciaraluno' %}" class="btn btn-primary">Gerenciar Alunos</a>
             </div>
         </div>
+        <br>
 
         <div class="card">
             <div class="card-header">
@@ -48,7 +47,6 @@
             </div>
             <div class="card-body">
               <h5 class="card-title">Área dedicada ao gerenciamento do perfil de usuário.</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
               <a class="btn btn-warning" href="{% url 'atualizar_dados_coordenador' %}">Editar</a>
               <a class="btn btn-danger" href="#">Delete</a>
 
@@ -59,3 +57,7 @@
     </div>
 </div>
 {% endblock %}
+
+
+<!--Se precisar de explicação esse complemento pode ser utilizado no card-->
+<!--<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>-->
